@@ -1,0 +1,53 @@
+experiment:
+  algorithm: ppo
+  name: ppo_small_cartpole_swingup
+  output_dir: outputs
+  seed: 7
+  device: auto
+
+benchmark:
+  tasks:
+    - id: cartpole_swingup
+      suite: dmcontrol
+      domain: cartpole
+      task: swingup
+      action_repeat: 4
+      episode_length: 200
+
+training:
+  total_steps: 100000
+  # Stricter update budget than the shared low-budget dmcontrol config:
+  # shorter rollouts and fewer epochs reduce PPO's optimization passes per sample.
+  rollout_steps: 512
+  minibatch_size: 64
+  update_epochs: 2
+  eval_interval: 5000
+  eval_episodes: 3
+  checkpoint_interval: 25000
+  discount: 0.99
+
+optim:
+  lr: 0.0002
+  grad_clip: 0.5
+  weight_decay: 0.0
+  eps: 1.0e-5
+
+model:
+  actor_hidden_dims: [64, 64]
+  critic_hidden_dims: [64, 64]
+  init_log_std: -0.7
+
+algorithm:
+  clip_ratio: 0.2
+  gae_lambda: 0.95
+  value_coef: 0.5
+  entropy_coef: 0.001
+  target_kl: 0.03
+  normalize_advantages: true
+
+logging:
+  console_log_interval: 1000
+  episode_log_interval: 10
+  progress_interval: 500
+  plot_interval: 5000
+  enable_plots: true

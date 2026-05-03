@@ -1,0 +1,64 @@
+experiment:
+  algorithm: ppo
+  name: ppo_small_compare_dmcontrol
+  output_dir: runs/main/model_free/runs/ppo
+  seed: 8
+  device: cuda:0
+  resolved_name: ppo_small_compare_dmcontrol_cartpole_swingup
+benchmark:
+  tasks:
+  - id: cartpole_swingup
+    suite: dmcontrol
+    domain: cartpole
+    task: swingup
+    action_repeat: 4
+    episode_length: 200
+  - id: cheetah_run
+    suite: dmcontrol
+    domain: cheetah
+    task: run
+    action_repeat: 4
+    episode_length: 500
+training:
+  total_steps: 100000
+  rollout_steps: 1024
+  minibatch_size: 128
+  update_epochs: 4
+  eval_interval: 5000
+  eval_episodes: 3
+  checkpoint_interval: 25000
+  discount: 0.99
+optim:
+  lr: 0.0002
+  grad_clip: 0.5
+  weight_decay: 0.0
+  eps: 1.0e-05
+model:
+  actor_hidden_dims:
+  - 128
+  - 128
+  critic_hidden_dims:
+  - 128
+  - 128
+  init_log_std: -0.6
+algorithm:
+  clip_ratio: 0.2
+  gae_lambda: 0.95
+  value_coef: 0.5
+  entropy_coef: 0.001
+  target_kl: 0.05
+  normalize_advantages: true
+logging:
+  console_log_interval: 1000
+  episode_log_interval: 10
+  progress_interval: 500
+  plot_interval: 5000
+  enable_plots: true
+_config_path: baselines/ppo/configs/low_budget_compare_dmcontrol.yaml
+task:
+  id: cartpole_swingup
+  suite: dmcontrol
+  domain: cartpole
+  task: swingup
+  action_repeat: 4
+  episode_length: 200

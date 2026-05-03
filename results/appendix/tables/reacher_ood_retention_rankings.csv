@@ -1,0 +1,10 @@
+scope,algo,task,rank_by_avg_retention,avg_id_return,avg_ood_return,ood_delta,avg_retention,worst_condition,worst_condition_retention,avg_mse_id,avg_mse_ood,mse_ratio,n_ood_rows
+task,dreamerv3,finger_spin,1,73.233333,55.155556,-18.077778,0.753148,delay_2,0.357761,,,,18
+task,dreamerv3,reacher_easy,4,9.600000,9.300000,-0.300000,0.972553,act_0.7,0.854462,,,,18
+task,hamworld,finger_spin,2,245.433333,184.316667,-61.116667,0.751106,delay_2,0.286635,0.068797,0.236930,3.443914,18
+task,hamworld,reacher_easy,2,151.133333,149.838889,-1.294444,0.995633,damp_2.0,0.935642,0.070132,0.121018,1.725579,18
+task,tdmpc2,finger_spin,3,231.733333,166.294444,-65.438889,0.717641,delay_2,0.225508,0.032207,0.037536,1.165476,18
+task,tdmpc2,reacher_easy,1,131.566667,131.133333,-0.433333,1.008672,act_1.3,0.978758,0.025601,0.025533,0.997366,18
+overall,dreamerv3,,3,41.416667,32.227778,-9.188889,0.862851,reacher_easy:act_0.7;finger_spin:delay_2,0.606112,,,,36
+overall,hamworld,,1,198.283333,167.077778,-31.205556,0.873370,reacher_easy:damp_2.0;finger_spin:delay_2,0.611138,0.069464,0.178974,2.576488,36
+overall,tdmpc2,,2,181.650000,148.713889,-32.936111,0.863156,reacher_easy:act_1.3;finger_spin:delay_2,0.602133,0.028904,0.031535,1.091027,36

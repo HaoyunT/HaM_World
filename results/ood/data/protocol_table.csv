@@ -1,0 +1,25 @@
+task,task_label,condition,condition_label,target,operation,value,notes
+reacher_easy,Reacher Easy,mass_0.7,mass x0.7,body mass,scale,x0.7,all non-world bodies
+reacher_easy,Reacher Easy,mass_1.3,mass x1.3,body mass,scale,x1.3,all non-world bodies
+reacher_easy,Reacher Easy,damp_0.5,damp x0.5,dof damping,scale,x0.5,all dofs
+reacher_easy,Reacher Easy,damp_2.0,damp x2.0,dof damping,scale,x2.0,all dofs
+reacher_easy,Reacher Easy,act_0.7,act x0.7,actuator gear,scale,x0.7,all actuators
+reacher_easy,Reacher Easy,act_1.3,act x1.3,actuator gear,scale,x1.3,all actuators
+finger_spin,Finger Spin,fric_0.5,fric x0.5,geom friction,scale,x0.5,sliding friction
+finger_spin,Finger Spin,fric_1.5,fric x1.5,geom friction,scale,x1.5,sliding friction
+finger_spin,Finger Spin,mass_1.3,mass x1.3,spinner mass,scale,x1.3,body=spinner
+finger_spin,Finger Spin,mass_1.5,mass x1.5,spinner mass,scale,x1.5,body=spinner
+finger_spin,Finger Spin,delay_2,delay 2,action interface,wrapper,delay=2,fixed action delay
+finger_spin,Finger Spin,mask_30,mask 30%,observation interface,wrapper,mask=30%,per-step random masking
+cheetah_run,Cheetah Run,mass_0.7,mass x0.7,body mass,scale,x0.7,all non-world bodies
+cheetah_run,Cheetah Run,mass_1.3,mass x1.3,body mass,scale,x1.3,all non-world bodies
+cheetah_run,Cheetah Run,damp_0.5,damp x0.5,dof damping,scale,x0.5,all dofs
+cheetah_run,Cheetah Run,damp_2.0,damp x2.0,dof damping,scale,x2.0,all dofs
+cheetah_run,Cheetah Run,act_0.7,act x0.7,actuator gear,scale,x0.7,all actuators
+cheetah_run,Cheetah Run,act_1.3,act x1.3,actuator gear,scale,x1.3,all actuators
+cartpole_swingup,Cartpole Swingup,mass_0.7,mass x0.7,body mass,scale,x0.7,all non-world bodies
+cartpole_swingup,Cartpole Swingup,mass_1.3,mass x1.3,body mass,scale,x1.3,all non-world bodies
+cartpole_swingup,Cartpole Swingup,damp_0.5,damp x0.5,dof damping,scale,x0.5,all dofs
+cartpole_swingup,Cartpole Swingup,damp_2.0,damp x2.0,dof damping,scale,x2.0,all dofs
+cartpole_swingup,Cartpole Swingup,act_0.7,act x0.7,actuator gear,scale,x0.7,all actuators
+cartpole_swingup,Cartpole Swingup,act_1.3,act x1.3,actuator gear,scale,x1.3,all actuators

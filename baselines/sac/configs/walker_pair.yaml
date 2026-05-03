@@ -1,0 +1,58 @@
+experiment:
+  algorithm: sac
+  name: sac_walker_pair
+  output_dir: outputs
+  seed: 7
+  device: auto
+
+benchmark:
+  tasks:
+    - id: walker_walk
+      suite: dmcontrol
+      domain: walker
+      task: walk
+      action_repeat: 2
+      episode_length: 500
+    - id: walker2d_v4
+      suite: mujoco
+      env_name: Walker2d-v4
+      action_repeat: 1
+      episode_length: 1000
+
+training:
+  total_steps: 100000
+  seed_steps: 5000
+  train_every: 1
+  gradient_steps: 1
+  batch_size: 256
+  replay_capacity: 300000
+  eval_interval: 5000
+  eval_episodes: 3
+  checkpoint_interval: 25000
+  discount: 0.99
+
+optim:
+  lr: 0.0003
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  alpha_lr: 0.0003
+  target_tau: 0.01
+  weight_decay: 0.0
+
+model:
+  actor_hidden_dims: [256, 256]
+  critic_hidden_dims: [256, 256]
+
+algorithm:
+  init_temperature: 0.1
+  target_entropy_scale: 1.0
+  actor_update_interval: 1
+  target_update_interval: 1
+  learnable_temperature: true
+
+logging:
+  console_log_interval: 1000
+  episode_log_interval: 10
+  progress_interval: 500
+  plot_interval: 5000
+  enable_plots: true

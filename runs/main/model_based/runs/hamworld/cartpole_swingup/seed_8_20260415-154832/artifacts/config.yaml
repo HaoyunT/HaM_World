@@ -1,0 +1,128 @@
+experiment:
+  algorithm: hamworld
+  name: hamworld_cartpole_keep_control_retention_lr_replay
+  output_dir: runs/main/model_based/runs/hamworld
+  seed: 8
+  device: cuda:0
+  resolved_name: hamworld_cartpole_keep_control_retention_lr_replay_cartpole_swingup
+benchmark:
+  tasks:
+  - id: cartpole_swingup
+    suite: dmcontrol
+    domain: cartpole
+    task: swingup
+    action_repeat: 4
+    episode_length: 200
+latent:
+  latent_dim: 48
+  q_dim: 8
+  p_dim: 8
+  c_dim: 32
+training:
+  total_steps: 100000
+  seed_steps: 5000
+  train_every: 2
+  gradient_steps: 2
+  batch_size: 128
+  sequence_length: 8
+  replay_capacity: 50000
+  eval_interval: 2500
+  eval_episodes: 3
+  checkpoint_interval: 10000
+  discount: 0.99
+optim:
+  lr: 0.0001
+  lr_schedule: linear
+  lr_decay_start: 30000
+  lr_decay_end: 100000
+  lr_final_scale: 0.1
+  grad_clip: 10.0
+  weight_decay: 0.0
+  encoder_tau: 0.01
+  value_tau: 0.01
+model:
+  use_control_map: true
+  hamiltonian_alpha: 0.1
+  encoder_hidden_dims:
+  - 256
+  - 256
+  projector_hidden_dims:
+  - 128
+  projection_dim: 64
+  memory_model_dim: 128
+  memory_state_dim: 128
+  memory_layers: 2
+  dynamics_hidden_dims:
+  - 128
+  - 128
+  aux_hidden_dims:
+  - 128
+  - 128
+  energy_hidden_dims:
+  - 128
+  - 128
+  head_hidden_dims:
+  - 128
+  - 128
+  policy_hidden_dims:
+  - 128
+  - 128
+  scalar_num_bins: 255
+  scalar_bin_lo: -20.0
+  scalar_bin_hi: 20.0
+  zero_init_scalar_heads: true
+  hamiltonian_alpha_growth_rate: 5.7142857142857145e-06
+  hamiltonian_alpha_max: 0.5
+  hamiltonian_alpha_growth_start: 0.3
+planner:
+  horizon: 4
+  iterations: 4
+  candidates: 64
+  elite: 8
+  init_std: 0.35
+  min_std: 0.05
+  temperature: 0.8
+  policy_trajectories: 16
+  policy_noise: 0.1
+  use_policy_mean_init: true
+  exploration_std: 0.2
+  replan_every: 1
+losses:
+  rollout_steps: 3
+  w_repr: 1.0
+  w_dyn: 1.0
+  w_reward: 1.0
+  w_value: 0.5
+  w_roll: 0.5
+  w_sa: 0.05
+  w_energy: 0.01
+  w_policy_prior: 0.1
+  lambda_h: 0.05
+  value_lambda_return: 0.95
+  value_slow_reg: 1.0
+warmup:
+  roll_warmup_start: 0.3
+  roll_warmup_end: 0.6
+  roll_warmup_init_scale: 0.1
+  sa_warmup_start: 0.3
+  sa_warmup_end: 0.6
+  sa_warmup_init_scale: 0.0
+  energy_warmup_start: 0.3
+  energy_warmup_end: 0.6
+  energy_warmup_init_scale: 0.0
+regularization:
+  small_action_threshold: 0.15
+logging:
+  console_log_interval: 1000
+  episode_log_interval: 10
+  progress_interval: 500
+  plot_interval: 5000
+  enable_plots: true
+_config_path: hamworld/configs/cartpole_swingup_keep_control_retention_lr_replay.yaml
+task:
+  id: cartpole_swingup
+  suite: dmcontrol
+  domain: cartpole
+  task: swingup
+  action_repeat: 4
+  episode_length: 200

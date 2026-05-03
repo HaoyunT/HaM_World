@@ -1,0 +1,17 @@
+bundle,task,mode,trace_path
+quick_seed7,finger_spin,teacher_forced,results/mechanism/traces/quick_seed7/traces/finger_spin_seed7_teacher_forced.npz
+quick_seed7,finger_spin,imagined,results/mechanism/traces/quick_seed7/traces/finger_spin_seed7_imagined.npz
+quick_seed7,cheetah_run,teacher_forced,results/mechanism/traces/quick_seed7/traces/cheetah_run_seed7_teacher_forced.npz
+quick_seed7,cheetah_run,imagined,results/mechanism/traces/quick_seed7/traces/cheetah_run_seed7_imagined.npz
+quick_seed7,cartpole_swingup,teacher_forced,results/mechanism/traces/quick_seed7/traces/cartpole_swingup_seed7_teacher_forced.npz
+quick_seed7,cartpole_swingup,imagined,results/mechanism/traces/quick_seed7/traces/cartpole_swingup_seed7_imagined.npz
+quick_seed7,reacher_easy,teacher_forced,results/mechanism/traces/quick_seed7/traces/reacher_easy_seed7_teacher_forced.npz
+quick_seed7,reacher_easy,imagined,results/mechanism/traces/quick_seed7/traces/reacher_easy_seed7_imagined.npz
+ep10_seed7,finger_spin,teacher_forced,results/mechanism/traces/ep10_seed7/traces/finger_spin_seed7_teacher_forced.npz
+ep10_seed7,finger_spin,imagined,results/mechanism/traces/ep10_seed7/traces/finger_spin_seed7_imagined.npz
+ep10_seed7,cheetah_run,teacher_forced,results/mechanism/traces/ep10_seed7/traces/cheetah_run_seed7_teacher_forced.npz
+ep10_seed7,cheetah_run,imagined,results/mechanism/traces/ep10_seed7/traces/cheetah_run_seed7_imagined.npz
+ep10_seed7,cartpole_swingup,teacher_forced,results/mechanism/traces/ep10_seed7/traces/cartpole_swingup_seed7_teacher_forced.npz
+ep10_seed7,cartpole_swingup,imagined,results/mechanism/traces/ep10_seed7/traces/cartpole_swingup_seed7_imagined.npz
+ep10_seed7,reacher_easy,teacher_forced,results/mechanism/traces/ep10_seed7/traces/reacher_easy_seed7_teacher_forced.npz
+ep10_seed7,reacher_easy,imagined,results/mechanism/traces/ep10_seed7/traces/reacher_easy_seed7_imagined.npz

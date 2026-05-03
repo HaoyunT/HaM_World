@@ -1,0 +1,80 @@
+experiment:
+  algorithm: tdmpc2
+  name: tdmpc2_finger_reacher
+  output_dir: outputs
+  seed: 7
+  device: auto
+
+benchmark:
+  tasks:
+    - id: finger_spin
+      suite: dmcontrol
+      domain: finger
+      task: spin
+      action_repeat: 2
+      episode_length: 500
+    - id: reacher_easy
+      suite: dmcontrol
+      domain: reacher
+      task: easy
+      action_repeat: 4
+      episode_length: 200
+
+latent:
+  latent_dim: 128
+  simnorm_groups: 8
+
+training:
+  total_steps: 50000
+  seed_steps: 5000
+  train_every: 2
+  gradient_steps: 1
+  batch_size: 128
+  sequence_length: 8
+  replay_capacity: 300000
+  eval_interval: 5000
+  eval_episodes: 3
+  checkpoint_interval: 25000
+  discount: 0.99
+
+optim:
+  lr: 0.0003
+  model_lr: 0.0003
+  grad_clip: 10.0
+  weight_decay: 0.0
+  target_tau: 0.01
+
+model:
+  encoder_hidden_dims: [256, 256]
+  dynamics_hidden_dims: [256, 256]
+  reward_hidden_dims: [256, 256]
+  q_hidden_dims: [256, 256]
+  policy_hidden_dims: [256, 256]
+
+policy:
+  lr: 0.0003
+  min_std: 0.05
+  max_std: 1.0
+  exploration_std: 0.2
+
+planner:
+  horizon: 5
+  iterations: 6
+  candidates: 256
+  elite: 32
+  temperature: 0.5
+  init_std: 0.6
+  min_std: 0.05
+  policy_trajectories: 64
+
+losses:
+  consistency_scale: 1.0
+  reward_scale: 1.0
+  q_scale: 1.0
+
+logging:
+  console_log_interval: 1000
+  episode_log_interval: 10
+  progress_interval: 500
+  plot_interval: 5000
+  enable_plots: true

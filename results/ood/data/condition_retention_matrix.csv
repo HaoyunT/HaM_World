@@ -1,0 +1,25 @@
+task,task_label,condition,condition_label,hamworld,tdmpc2,dreamerv3,ppo,sac
+reacher_easy,Reacher Easy,mass_0.7,mass x0.7,1.009637,0.996777,0.932643,1.007798,0.998212
+reacher_easy,Reacher Easy,mass_1.3,mass x1.3,1.010596,0.939859,1.145578,1.005848,0.988056
+reacher_easy,Reacher Easy,damp_0.5,damp x0.5,0.903221,0.943101,1.043768,1.119453,0.896421
+reacher_easy,Reacher Easy,damp_2.0,damp x2.0,0.888948,0.931327,0.867327,1.163781,0.845573
+reacher_easy,Reacher Easy,act_0.7,act x0.7,0.947243,0.974275,0.854462,1.127393,0.898728
+reacher_easy,Reacher Easy,act_1.3,act x1.3,0.967743,1.015990,0.991542,1.048128,1.021097
+finger_spin,Finger Spin,fric_0.5,fric x0.5,0.973314,0.997673,0.888029,0.914557,0.885306
+finger_spin,Finger Spin,fric_1.5,fric x1.5,1.012256,0.998484,1.029586,1.021248,1.006939
+finger_spin,Finger Spin,mass_1.3,mass x1.3,0.930014,0.965292,0.814747,0.855787,0.821590
+finger_spin,Finger Spin,mass_1.5,mass x1.5,0.845922,0.861024,0.802003,0.790235,0.754220
+finger_spin,Finger Spin,delay_2,delay 2,0.298781,0.211311,0.357761,0.085895,0.338440
+finger_spin,Finger Spin,mask_30,mask 30%,0.367333,0.367910,0.626764,0.183092,0.303867
+cheetah_run,Cheetah Run,mass_0.7,mass x0.7,0.696680,0.709145,0.568988,0.721780,0.721068
+cheetah_run,Cheetah Run,mass_1.3,mass x1.3,1.108506,1.215171,1.224528,1.415804,1.011893
+cheetah_run,Cheetah Run,damp_0.5,damp x0.5,0.956769,0.880180,0.665818,0.936861,0.934197
+cheetah_run,Cheetah Run,damp_2.0,damp x2.0,0.783949,0.912350,0.716142,0.512722,0.743383
+cheetah_run,Cheetah Run,act_0.7,act x0.7,0.724732,0.873742,0.698028,0.622349,0.694385
+cheetah_run,Cheetah Run,act_1.3,act x1.3,0.933627,1.063623,0.780844,0.856390,1.072929
+cartpole_swingup,Cartpole Swingup,mass_0.7,mass x0.7,1.065972,5.625721,0.922856,0.682879,1.044588
+cartpole_swingup,Cartpole Swingup,mass_1.3,mass x1.3,0.938311,1.282024,0.934145,1.102232,0.949915
+cartpole_swingup,Cartpole Swingup,damp_0.5,damp x0.5,1.000992,0.965532,1.000275,0.999881,0.999998
+cartpole_swingup,Cartpole Swingup,damp_2.0,damp x2.0,1.000159,1.685363,0.996436,1.000239,0.999988
+cartpole_swingup,Cartpole Swingup,act_0.7,act x0.7,0.910863,1.058151,0.911428,1.060522,0.925010
+cartpole_swingup,Cartpole Swingup,act_1.3,act x1.3,1.046262,1.912882,0.933515,0.685589,1.034753
