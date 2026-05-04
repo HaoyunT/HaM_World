@@ -2,6 +2,10 @@
 
 Anonymous paper artifact repository for **HaM-World**.
 
+## Method Overview
+
+![HaM-World architecture overview](assets/architecture_overview.png)
+
 This repository is a cleaned, paper-facing version of the original research workspace. It keeps:
 
 - the canonical `HaM-World` source code
