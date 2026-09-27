@@ -24,6 +24,10 @@ Haoyun Tang<sup>*</sup>, Haodong Cui<sup>*</sup>, Keyao Xu, Kun Wang<sup>†</su
 - **Sep. 2026:** 🎉 HaM-World has been accepted by **NeurIPS 2026**.
 - **May 2026:** HaM-World is available on [arXiv](https://arxiv.org/abs/2605.05951), with the research code released.
 
+## About
+
+Official GitHub repository for the NeurIPS 2026 paper **HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning**.
+
 ## Overview
 
 HaM-World is a world-model framework for long-horizon planning. It combines a
