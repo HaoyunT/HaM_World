@@ -4,7 +4,7 @@
 
 ### Soft-Hamiltonian World Models with Selective Memory for Planning
 
-Haoyun Tang<sup>1,*</sup>, Haodong Cui<sup>2,*</sup>, Keyao Xu<sup>3</sup>, Kun Wang<sup>4,†</sup>, Zhandong Mei<sup>1,†</sup>
+Haoyun Tang<sup>1,*</sup>, Haodong Cui<sup>2,*</sup>, Keyao Xu<sup>3</sup>, Zhandong Mei<sup>1,†</sup>, Kun Wang<sup>4,†</sup>
 
 <sup>1</sup> Xi'an Jiaotong University &nbsp;&nbsp; <sup>2</sup> Huazhong University of Science and Technology<br>
 <sup>3</sup> Nankai University &nbsp;&nbsp; <sup>4</sup> Nanyang Technological University
@@ -197,7 +197,7 @@ If you use HaM-World in your research, please cite:
 ```bibtex
 @inproceedings{tang2026hamworld,
   title={HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning},
-  author={Tang, Haoyun and Cui, Haodong and Xu, Keyao and Wang, Kun and Mei, Zhandong},
+  author={Tang, Haoyun and Cui, Haodong and Xu, Keyao and Mei, Zhandong and Wang, Kun},
   booktitle={Advances in Neural Information Processing Systems},
   year={2026}
 }
