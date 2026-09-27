@@ -1,6 +1,6 @@
 <div align="center">
 
-# HaM-World
+# [NeurIPS 2026] HaM-World
 
 ### Soft-Hamiltonian World Models with Selective Memory for Planning
 
