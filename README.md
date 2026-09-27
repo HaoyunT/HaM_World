@@ -4,7 +4,10 @@
 
 ### Soft-Hamiltonian World Models with Selective Memory for Planning
 
-Haoyun Tang<sup>*</sup>, Haodong Cui<sup>*</sup>, Keyao Xu, Kun Wang<sup>†</sup>, Zhandong Mei<sup>†</sup>
+Haoyun Tang<sup>1,*</sup>, Haodong Cui<sup>2,*</sup>, Keyao Xu<sup>3</sup>, Kun Wang<sup>4,†</sup>, Zhandong Mei<sup>1,†</sup>
+
+<sup>1</sup> Xi'an Jiaotong University &nbsp;&nbsp; <sup>2</sup> Huazhong University of Science and Technology<br>
+<sup>3</sup> Nankai University &nbsp;&nbsp; <sup>4</sup> Nanyang Technological University
 
 [![NeurIPS 2026](https://img.shields.io/badge/NeurIPS%202026-Accepted-2ea44f?style=flat-square)](https://arxiv.org/abs/2605.05951)
 [![arXiv](https://img.shields.io/badge/arXiv-2605.05951-b31b1b?style=flat-square)](https://arxiv.org/abs/2605.05951)
