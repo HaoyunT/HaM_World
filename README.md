@@ -4,7 +4,7 @@
 
 ### Soft-Hamiltonian World Models with Selective Memory for Planning
 
-Haoyun Tang<sup>1,*</sup>, Haodong Cui<sup>2,*</sup>, Keyao Xu<sup>3</sup>, Zhandong Mei<sup>1,†</sup>, Kun Wang<sup>4,†</sup>
+Haoyun Tang<sup>1</sup><strong>&#42;</strong>, Haodong Cui<sup>2</sup><strong>&#42;</strong>, Keyao Xu<sup>3</sup>, Zhandong Mei<sup>1</sup><strong>&#8224;</strong>, Kun Wang<sup>4</sup><strong>&#8224;</strong>
 
 <sup>1</sup> Xi'an Jiaotong University &nbsp;&nbsp; <sup>2</sup> Huazhong University of Science and Technology<br>
 <sup>3</sup> Nankai University &nbsp;&nbsp; <sup>4</sup> Nanyang Technological University
