@@ -1,24 +1,52 @@
-# HaM_World
+<div align="center">
 
-Anonymous paper artifact repository for **HaM-World**.
+# HaM-World
 
-## Method Overview
+### Soft-Hamiltonian World Models with Selective Memory for Planning
 
-![HaM-World architecture overview](assets/architecture_overview_20260504.png)
+Haoyun Tang<sup>*</sup>, Haodong Cui<sup>*</sup>, Keyao Xu, Kun Wang<sup>†</sup>, Zhandong Mei<sup>†</sup>
 
-This repository is a cleaned, paper-facing version of the original research workspace. It keeps:
+[![NeurIPS 2026](https://img.shields.io/badge/NeurIPS%202026-Accepted-2ea44f?style=flat-square)](https://arxiv.org/abs/2605.05951)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.05951-b31b1b?style=flat-square)](https://arxiv.org/abs/2605.05951)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red?style=flat-square)](https://arxiv.org/pdf/2605.05951)
+[![GitHub stars](https://img.shields.io/github/stars/HaoyunT/HaM_World?style=flat-square)](https://github.com/HaoyunT/HaM_World/stargazers)
 
-- the canonical `HaM-World` source code
-- the four baseline implementations used in the paper
-- the full raw runs for the **main 5-algorithm comparison**
-- compact result-layer assets for **OOD** and **ablation**
-- paper figures, tables, and minimal mechanism-analysis traces
+<sup>*</sup> Equal contribution. <sup>†</sup> Corresponding authors.
 
-The paper PDF is intentionally not included in this repository during anonymous review.
+</div>
 
-## What Is Included
+<div align="center">
+<img src="assets/architecture_overview_20260504.png" width="960" alt="HaM-World architecture overview" />
+</div>
 
-Algorithms kept in this repository:
+## News
+
+- **Sep. 2026:** 🎉 HaM-World has been accepted by **NeurIPS 2026**.
+- **May 2026:** HaM-World is available on [arXiv](https://arxiv.org/abs/2605.05951), with the research code released.
+
+## Overview
+
+HaM-World is a world-model framework for long-horizon planning. It combines a
+soft-Hamiltonian latent dynamics model with a selective memory mechanism so that
+the planner can preserve useful history while maintaining a structured latent
+state for imagined rollouts.
+
+The latent state is decomposed into a Hamiltonian state and a semantic context:
+
+- the Hamiltonian state models structured position/momentum-like dynamics;
+- the semantic context carries task-relevant information that is not captured by
+  the physical state alone;
+- selective memory summarizes long histories and filters irrelevant observations;
+- energy, residual/control dynamics, and value estimation are exposed through a
+  planner-facing latent interface.
+
+The repository contains the canonical implementation, baseline agents, paper
+result exports, mechanism-analysis traces, and scripts used to rebuild the
+paper-facing figures and tables.
+
+## Repository Contents
+
+The maintained comparison includes:
 
 - `HaM-World`
 - `DreamerV3`
@@ -26,77 +54,53 @@ Algorithms kept in this repository:
 - `PPO`
 - `SAC`
 
-Repository policy:
+The repository keeps full raw runs for the main comparison and compact,
+paper-facing exports for OOD, ablation, and mechanism analyses. Exploratory
+sweeps and failed reruns are intentionally excluded.
 
-- `runs/main/` keeps raw checkpoints and logs for the main comparison.
-- `results/ood/` and `results/ablation/` keep **result-level exports only**.
-- `results/mechanism/` keeps the paper-used figures plus the minimal `.npz` traces needed to replot them.
-- exploratory sweeps, failed reruns, duplicate experiment roots, and non-paper assets are intentionally excluded.
+## Results
 
-## Repository Layout
+Paper-facing results are available directly in the repository:
 
-```text
-HaM_World/
-├── launch.py
-├── environment.yml
-├── requirements.txt
-├── hamworld/                  # canonical HaM-World package
-├── baselines/                 # DreamerV3 / TD-MPC2 / PPO / SAC
-├── runs/
-│   └── main/                  # full raw runs for the 5-algorithm main comparison
-├── results/
-│   ├── main/                  # main paper curves, tables, manifests
-│   ├── ood/                   # compact OOD result exports
-│   ├── ablation/              # compact ablation result exports
-│   ├── mechanism/             # mechanism figures + minimal trace bundles
-│   └── appendix/              # appendix-only assets
-└── scripts/                   # rebuild / plot / analysis utilities
-```
-
-Useful paths:
-
-- main result table: [`results/main/tables/paper_main_results.csv`](./results/main/tables/paper_main_results.csv)
-- main learning curves: [`results/main/figures/main_results_curves_assembled.pdf`](./results/main/figures/main_results_curves_assembled.pdf)
-- OOD summary table: [`results/ood/tables/ood_condition_retention.csv`](./results/ood/tables/ood_condition_retention.csv)
-- ablation table: [`results/ablation/tables/paper_ablation_core_table.csv`](./results/ablation/tables/paper_ablation_core_table.csv)
+- [Main comparison table](results/main/tables/paper_main_results.csv)
+- [Main learning curves](results/main/figures/main_results_curves_assembled.png)
+- [Long-horizon table](results/main/tables/long_horizon_k357.csv)
+- [OOD retention table](results/ood/tables/ood_condition_retention.csv)
+- [Ablation table](results/ablation/tables/paper_ablation_core_table.csv)
+- [Mechanism figures](results/mechanism/figures/)
+- [Rollout overview](results/main/figures/rollout_overview_4tasks.png)
 
 ## Installation
 
-Recommended: `uv`
+The reference environment uses Python 3.11. `uv` is recommended for a local
+editable environment:
 
 ```bash
-cd HaM_World
 uv venv .venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
 
-Alternative: conda
+The Conda environment is also provided:
 
 ```bash
-cd HaM_World
 conda env create -f environment.yml
 conda activate ham_world
 ```
 
-Core dependencies:
-
-- `torch`
-- `dm-control`
-- `gymnasium[mujoco]`
-- `gymnasium-robotics`
-- `matplotlib`
-- `PyYAML`
+The main dependencies are PyTorch 2.2 or newer, Gymnasium with MuJoCo,
+`dm-control`, NumPy, PyYAML, tqdm, and Matplotlib. GPU execution is recommended
+for training and long-horizon evaluation.
 
 ## Quick Start
 
-List supported algorithms, presets, and configs:
+List supported algorithms, presets, and configurations:
 
 ```bash
 python launch.py list
 ```
 
-Dry-run one training plan:
+Dry-run a HaM-World training plan:
 
 ```bash
 python launch.py train \
@@ -107,7 +111,7 @@ python launch.py train \
   --dry-run
 ```
 
-Train HaM-World on Finger + Reacher:
+Train HaM-World on the Finger and Reacher preset:
 
 ```bash
 python launch.py train \
@@ -117,7 +121,7 @@ python launch.py train \
   --output-root outputs
 ```
 
-Train all five kept algorithms for one preset:
+Run all five maintained algorithms for one comparison preset:
 
 ```bash
 python launch.py train \
@@ -127,16 +131,13 @@ python launch.py train \
   --output-root outputs
 ```
 
-Shell entrypoints are also provided:
+The shell entrypoints under `scripts/train/` provide equivalent paper-run
+commands. Set `PYTHON_BIN` when the environment uses a non-default Python
+executable.
 
-```bash
-PYTHON_BIN=/path/to/python bash scripts/train/run_hamworld_paper_4tasks.sh
-PYTHON_BIN=/path/to/python SEED=7 bash scripts/train/run_all_paper_5alg_4tasks.sh
-```
+## Rebuild Paper Assets
 
-## Rebuilding Paper Assets
-
-Typical result rebuild commands:
+Rebuild the main and analysis summaries with:
 
 ```bash
 python scripts/rebuild_main_return_table.py
@@ -147,7 +148,7 @@ python scripts/rebuild_ood_summaries.py
 python scripts/rebuild_rollout_overview.py
 ```
 
-Mechanism-related replots:
+For mechanism figures:
 
 ```bash
 python scripts/replot_h_freerun.py
@@ -155,55 +156,48 @@ python scripts/replot_phase_portrait.py
 python scripts/replot_pqc.py
 ```
 
-Notes:
+Paths in result manifests are repository-relative, so the repository can be
+moved without manually rewriting experiment roots.
 
-- `results/main/` is the primary supported rebuild target.
-- OOD and ablation are shipped as compact result exports rather than full raw campaigns.
-- path-bearing manifests in this repository use **repository-relative paths**, so the repository can be moved without manually fixing paths.
+## Repository Layout
 
-## About `launch.py`
+```text
+HaM_World/
+├── launch.py
+├── environment.yml
+├── requirements.txt
+├── hamworld/                  # canonical HaM-World implementation
+├── baselines/                 # DreamerV3 / TD-MPC2 / PPO / SAC
+├── runs/main/                 # raw runs for the main comparison
+├── results/
+│   ├── main/                  # main curves, tables, and manifests
+│   ├── ood/                   # compact OOD exports
+│   ├── ablation/              # compact ablation exports
+│   ├── mechanism/             # mechanism figures and trace bundles
+│   └── appendix/              # appendix-only assets
+├── assets/                    # architecture figures
+└── scripts/                   # training, rebuild, and plotting utilities
+```
 
-`launch.py` is a **convenience wrapper**, not the algorithm implementation itself.
-
-Its role is to provide one unified CLI for the 5 kept algorithms:
-
-- selects the algorithm package to invoke
-- selects a preset such as `compare_dmcontrol` or `finger_reacher`
-- resolves the correct config file for each algorithm
-- applies seed / output-root / dotted overrides
-- expands a multi-task config into per-task runs
-- optionally resumes from a checkpoint
-
-In other words, `launch.py` is a thin orchestration layer over:
-
-- `hamworld/train.py`
-- `baselines/dreamerv3/train.py`
-- `baselines/tdmpc2/train.py`
-- `baselines/ppo/train.py`
-- `baselines/sac/train.py`
-
-It is not strictly required for the core algorithm code, but it is useful in this paper repository because it gives reviewers one stable entrypoint instead of five different training interfaces.
-
-## Data Policy
-
-This repository intentionally separates raw runs from paper-facing assets:
-
-- `runs/main/`: full raw run trees for the main comparison
-- `results/main/`: paper-facing summaries derived from `runs/main/`
-- `results/ood/`: OOD result exports only
-- `results/ablation/`: ablation result exports only
-- `results/mechanism/`: kept figures and minimal trace bundles for paper diagnostics
-
-If someone wants to replay the entire original OOD or ablation training campaigns from checkpoints, this repository is **not** the full historical workspace; it is the cleaned paper artifact.
-
-## Naming
-
-- paper name: `HaM-World`
-- repository name: `HaM_World`
-- Python package name: `hamworld`
-
-This split is intentional: the paper-facing name stays readable, while the import path stays simple and stable.
+`launch.py` is a convenience wrapper around the individual training modules.
+It selects algorithms and presets, applies seeds and output roots, expands
+multi-task configurations, and optionally resumes from checkpoints.
 
 ## Citation
 
-Citation metadata can be added here after the anonymous review process.
+If you use HaM-World in your research, please cite:
+
+```bibtex
+@inproceedings{tang2026hamworld,
+  title={HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning},
+  author={Tang, Haoyun and Cui, Haodong and Xu, Keyao and Wang, Kun and Mei, Zhandong},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026}
+}
+```
+
+## Acknowledgements
+
+This repository includes implementations and comparison code for the baselines
+listed above. Please consult the corresponding source files and configuration
+headers for upstream attribution and usage requirements before redistribution.
