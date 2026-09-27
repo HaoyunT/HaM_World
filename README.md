@@ -14,7 +14,7 @@ Haoyun Tang<sup>1,*</sup>, Haodong Cui<sup>2,*</sup>, Keyao Xu<sup>3</sup>, Zhan
 [![Paper](https://img.shields.io/badge/Paper-PDF-red?style=flat-square)](https://arxiv.org/pdf/2605.05951)
 [![GitHub stars](https://img.shields.io/github/stars/HaoyunT/HaM_World?style=flat-square)](https://github.com/HaoyunT/HaM_World/stargazers)
 
-<sup>*</sup> Equal contribution. <sup>†</sup> Corresponding authors.
+* Equal contribution. † Corresponding authors.
 
 </div>
 
