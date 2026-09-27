@@ -13,6 +13,7 @@ Haoyun Tang<sup>1</sup><strong>&#42;</strong>, Haodong Cui<sup>2</sup><strong>&#
 [![arXiv](https://img.shields.io/badge/arXiv-2605.05951-b31b1b?style=flat-square)](https://arxiv.org/abs/2605.05951)
 [![Paper](https://img.shields.io/badge/Paper-PDF-red?style=flat-square)](https://arxiv.org/pdf/2605.05951)
 [![GitHub stars](https://img.shields.io/github/stars/HaoyunT/HaM_World?style=flat-square)](https://github.com/HaoyunT/HaM_World/stargazers)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-FFD21E?style=flat-square)](https://huggingface.co/haodongcui/HaM_World)
 
 &#42; Equal contribution. &#8224; Corresponding authors.
 
